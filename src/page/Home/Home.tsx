@@ -56,7 +56,7 @@ class Home extends Component<HomeProps, HomeState> {
   }
 
   componentDidUpdate(
-    prevProps: Readonly<HomeProps>,
+    _prevProps: Readonly<HomeProps>,
     prevState: Readonly<HomeState>
   ): void {
     if (this.state.searchInput !== prevState.searchInput) {
