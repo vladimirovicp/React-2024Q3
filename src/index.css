@@ -24,7 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -32,6 +31,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 button {
@@ -51,6 +54,15 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 20px;
 }
 
 @media (prefers-color-scheme: light) {

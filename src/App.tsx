@@ -1,16 +1,11 @@
-import './App.css'
-import Footer from './compotents/Footer/Footer'
-import Header from './compotents/Header/Header'
-import Main from './compotents/Main/Main'
+import './App.css';
+import Boundary from './compotents/Boundary/Boundary';
+import Home from './page/Home/Home';
 function App() {
-
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  )
+    <Boundary>
+      <Home />
+    </Boundary>
+  );
 }
-
-export default App
+export default App;

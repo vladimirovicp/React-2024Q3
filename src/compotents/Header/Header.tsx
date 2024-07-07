@@ -1,10 +1,19 @@
 import { Component } from 'react';
+import Search from '../Search/Search';
+import BoundaryButton from '../Boundary/BoundaryButton';
 
-class Header extends Component {
+interface HeaderProps {
+  onSearch: (newValue: string) => void;
+}
+
+class Header extends Component<HeaderProps> {
   render() {
     return (
       <header>
-        <h1>Header!</h1>
+        <div className="container">
+          <Search onSearch={this.props.onSearch} />
+          <BoundaryButton />
+        </div>
       </header>
     );
   }
