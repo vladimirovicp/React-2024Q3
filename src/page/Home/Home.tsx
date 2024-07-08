@@ -73,7 +73,11 @@ class Home extends Component<HomeProps, HomeState> {
       <>
         <Header onSearch={this.handleSearch} />
         <main className="main">
-          { this.state.isLoading ? (<Preloader />) : <Cards cards={this.state.cards} />}
+          {this.state.isLoading ? (
+            <Preloader />
+          ) : (
+            <Cards cards={this.state.cards} />
+          )}
         </main>
       </>
     );
