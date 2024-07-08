@@ -1,0 +1,11 @@
+.preloader{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    color: green;
+    padding: 10px 20px;
+    background: #e1e1e1;
+    border-radius: 10px;
+}

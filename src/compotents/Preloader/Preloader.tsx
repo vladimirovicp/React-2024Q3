@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './Preloader.css';
 
 class Preloader extends Component<Record<string, never>>{
     render() {
