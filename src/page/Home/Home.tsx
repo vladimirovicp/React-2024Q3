@@ -3,6 +3,9 @@ import { Component } from 'react';
 import { HomeProps, HomeState } from './Home.props';
 import { CardParams, ResponseParams } from '../../compotents/Card/Card.props';
 import Cards from '../../compotents/Cards/Cards';
+import Preloader from '../../compotents/Preloader/Preloader';
+
+const API_URL = 'https://swapi.dev/api/planets/';
 
 class Home extends Component<HomeProps, HomeState> {
   constructor(props: HomeProps) {
@@ -23,10 +26,9 @@ class Home extends Component<HomeProps, HomeState> {
   };
 
   fetchCards = async (searchText?: string | null) => {
-    let url = `https://swapi.dev/api/planets/`;
-
+    let url = API_URL;
     if (searchText && searchText.trim() !== '') {
-      url += `?search=${searchText}`;
+      url = API_URL + `?search=${searchText}`;
     }
 
     try {
@@ -47,6 +49,7 @@ class Home extends Component<HomeProps, HomeState> {
   };
 
   componentDidMount() {
+    // Компонент смонтировался | единожды
     const currentSearchValue: string | null =
       localStorage.getItem('search-input');
     this.setState({ searchInput: currentSearchValue || '' });
@@ -56,6 +59,7 @@ class Home extends Component<HomeProps, HomeState> {
   }
 
   componentDidUpdate(
+    // Компонент обновился
     _prevProps: Readonly<HomeProps>,
     prevState: Readonly<HomeState>
   ): void {
@@ -69,7 +73,7 @@ class Home extends Component<HomeProps, HomeState> {
       <>
         <Header onSearch={this.handleSearch} />
         <main className="main">
-          <Cards cards={this.state.cards} isLoading={this.state.isLoading} />
+          { this.state.isLoading ? (<Preloader />) : <Cards cards={this.state.cards} />}
         </main>
       </>
     );

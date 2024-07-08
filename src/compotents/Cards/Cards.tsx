@@ -5,15 +5,10 @@ import './Cards.css';
 
 type CardsListProps = {
   cards: CardParams[];
-  isLoading: boolean;
 };
 
 class Cards extends Component<CardsListProps> {
   renderContent() {
-    if (this.props.isLoading) {
-      return <div className="doenload"></div>;
-    }
-
     if (this.props.cards.length > 0) {
       return this.props.cards.map((card, index) => (
         <Card key={index} itemData={card} />
